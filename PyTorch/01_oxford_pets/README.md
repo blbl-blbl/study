@@ -10,11 +10,11 @@ Notebook-файлы расположены в порядке прохожден�
 4. **04_transfer_learning.ipynb** — ResNet18, frozen backbone, обучение `fc`.
 5. **05_fine_tuning.ipynb** — разморозка `layer4`, разные learning rate.
 6. **06_augmentation.ipynb** — train-аугментации при детерминированной validation.
-7. **07_error_analysis.ipynb** — заготовка следующей темы.
-8. **08_test_and_inference.ipynb** — заготовка финальной темы.
+7. **07_error_analysis.ipynb** — метрики по породам, confusion matrix, частые пары ошибок и визуальный разбор.
+8. **08_test_and_inference.ipynb** — финальная оценка на test и inference отдельного изображения.
 
 ## Принцип независимости
 
-Каждый содержательный notebook содержит собственные импорты, seed/device setup, загрузку Oxford-IIIT Pet, создание split/DataLoader и необходимые функции. Можно открыть любой notebook отдельно в Google Colab и выполнить сверху вниз.
+Каждый notebook содержит собственные импорты, seed/device setup, загрузку Oxford-IIIT Pet, создание необходимых split/DataLoader, модель и функции, нужные для конкретной темы. Можно открыть любой notebook отдельно в Google Colab и выполнить сверху вниз.
 
 Checkpoint-файлы создаются самим notebook при необходимости; запуск предыдущего notebook не требуется.
