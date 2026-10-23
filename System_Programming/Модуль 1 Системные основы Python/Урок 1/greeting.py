@@ -1,4 +1,5 @@
 # greeting.py
+# Самостоятельное задание на изучение sys.argv
 
 import sys
 
