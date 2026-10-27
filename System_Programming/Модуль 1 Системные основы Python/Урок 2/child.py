@@ -1,8 +1,12 @@
 # child.py
 
 import sys
+import time
 
 print("Начинаю работу")
-print("Произошла ошибка", file=sys.stderr)
 
-sys.exit(7)
+time.sleep(3)
+
+print("Работа завершена")
+
+sys.exit(0)

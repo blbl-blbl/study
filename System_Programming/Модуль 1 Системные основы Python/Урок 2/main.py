@@ -8,15 +8,16 @@ try:
         [sys.executable, "child.py"],
         capture_output=True,
         text=True,
+        timeout=1,
         check=True
     )
 
-    print("Команда выполнена успшено")
+    print("Успех:", result.stdout)
 
-except subprocess.CalledProcessError as error:
+except subprocess.CalledProcessError:
     print("Ошибка выполнения команды")
-    print("Код:", error.returncode)
-    print("Сообщение:", error.stderr)
 
+except subprocess.TimeoutExpired:
+    print("Превышено время ожидания")
 
 print("Работа main.py завершена")
