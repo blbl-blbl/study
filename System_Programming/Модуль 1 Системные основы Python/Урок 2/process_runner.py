@@ -9,6 +9,12 @@ def run_process(
         timeout_s: float
 ) -> dict:
 
+    if not argv:
+        raise ValueError ("Передан пустой список команд")
+
+    if timeout_s <= 0:
+        raise ValueError ("Время выполнения команды меньше или равно 0")
+
     stdout = ""
     stderr = ""
 
@@ -44,27 +50,8 @@ def run_process(
     }
 
 
-
-# 1. Успешное выполнение
-print(run_process(
+# Тест 4
+run_process(
     [sys.executable, "-c", "print('Hello')"],
     5
-))
-
-# 2. Завершение с ошибкой
-print(run_process(
-    [sys.executable, "-c", "import sys; sys.exit(7)"],
-    5
-))
-
-# 3. Превышение времени
-print(run_process(
-    [sys.executable, "-c", "import time; time.sleep(3)"],
-    0.5
-))
-
-# 4. Несуществующая программа
-print(run_process(
-    ["nonexistent_command_xyz_123"],
-    5
-))
+)
